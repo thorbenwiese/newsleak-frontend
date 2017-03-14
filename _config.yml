@@ -38,7 +38,7 @@ urlimg: "/images/"
 
 
 # Logo size is 600x80 pixels
-#logo: "logo.jpg"
+logo: "logo.jpg"
 
 
 # Paginates all X entries
