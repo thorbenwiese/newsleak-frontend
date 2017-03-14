@@ -3,7 +3,7 @@ layout: page-fullwidth
 title: "NEW/S/LEAK Installation"
 permalink: "/install/"
 ---
-[![newsleak](http://newsleak.io/wp-content/uploads/2016/03/cropped-logo-draft.png)](http://newsleak.io)
+[![newsleak](http://newsleak.io/wp-content/uploads/2016/03/cropped-logo-draft.png)](https://tudarmstadt-lt.github.io/newsleak-frontend/install/)
 
 ## Project Setup
 
