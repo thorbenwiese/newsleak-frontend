@@ -1,0 +1,4 @@
+[debug] Copy resource mappings: 
+[debug] 	(/Users/wiese/Documents/UHH/Master/2.Semester/Projekt/newsleak-frontend/conf/application.conf,/Users/wiese/Documents/UHH/Master/2.Semester/Projekt/newsleak-frontend/target/scala-2.11/classes/application.conf)
+[debug] 	(/Users/wiese/Documents/UHH/Master/2.Semester/Projekt/newsleak-frontend/conf/logback.xml,/Users/wiese/Documents/UHH/Master/2.Semester/Projekt/newsleak-frontend/target/scala-2.11/classes/logback.xml)
+[debug] 	(/Users/wiese/Documents/UHH/Master/2.Semester/Projekt/newsleak-frontend/conf/routes,/Users/wiese/Documents/UHH/Master/2.Semester/Projekt/newsleak-frontend/target/scala-2.11/classes/routes)

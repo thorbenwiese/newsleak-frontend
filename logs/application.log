@@ -1,0 +1,649 @@
+2017-04-27 13:29:27,696 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2017-04-27 13:29:36,226 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-5 - SQL execution completed
+
+  [SQL Execution]
+   SELECT DISTINCT type FROM entity WHERE NOT isblacklisted; (1290 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:241)
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:240)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getTypes(EntityService.scala:240)
+    controllers.EntityController$$anonfun$getEntityTypes$1.apply(EntityController.scala:48)
+    controllers.EntityController$$anonfun$getEntityTypes$1.apply(EntityController.scala:47)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:29:36,242 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-3 - SQL execution completed
+
+  [SQL Execution]
+   SELECT DISTINCT key, type FROM metadata; (1330 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$getMetadataKeys$1.apply(DocumentService.scala:267)
+    models.services.DBDocumentService$$anonfun$getMetadataKeys$1.apply(DocumentService.scala:266)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBDocumentService$class.getMetadataKeys(DocumentService.scala:266)
+    models.services.FinalDocumentService.getMetadataKeys(DocumentService.scala:314)
+    controllers.MetadataController$$anonfun$getMetadataTypes$1.apply(MetadataController.scala:48)
+    controllers.MetadataController$$anonfun$getMetadataTypes$1.apply(MetadataController.scala:47)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    ...
+
+2017-04-27 13:29:36,281 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-7 - SQL execution completed
+
+  [SQL Execution]
+   SELECT label FROM labels; (1369 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$getDocumentLabels$1.apply(DocumentService.scala:235)
+    models.services.DBDocumentService$$anonfun$getDocumentLabels$1.apply(DocumentService.scala:234)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBDocumentService$class.getDocumentLabels(DocumentService.scala:234)
+    models.services.FinalDocumentService.getDocumentLabels(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$getTagLabels$1.apply(DocumentController.scala:75)
+    controllers.DocumentController$$anonfun$getTagLabels$1.apply(DocumentController.scala:74)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    ...
+
+2017-04-27 13:29:36,847 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-7 - SQL execution completed
+
+  [SQL Execution]
+   SELECT * FROM entity WHERE isblacklisted; (50 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getBlacklisted$1.apply(EntityService.scala:169)
+    models.services.DBEntityService$$anonfun$getBlacklisted$1.apply(EntityService.scala:168)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getBlacklisted(EntityService.scala:168)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:134)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:128)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:29:36,856 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-9 - SQL execution completed
+
+  [SQL Execution]
+   SELECT * FROM entity WHERE isblacklisted; (58 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getBlacklisted$1.apply(EntityService.scala:169)
+    models.services.DBEntityService$$anonfun$getBlacklisted$1.apply(EntityService.scala:168)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getBlacklisted(EntityService.scala:168)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:134)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:128)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:29:36,891 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-5 - SQL execution completed
+
+  [SQL Execution]
+   SELECT * FROM entity WHERE isblacklisted; (93 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getBlacklisted$1.apply(EntityService.scala:169)
+    models.services.DBEntityService$$anonfun$getBlacklisted$1.apply(EntityService.scala:168)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getBlacklisted(EntityService.scala:168)
+    controllers.NetworkController$$anonfun$induceSubgraph$1.apply(NetworkController.scala:129)
+    controllers.NetworkController$$anonfun$induceSubgraph$1.apply(NetworkController.scala:123)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:29:37,159 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-7 - SQL execution completed
+
+  [SQL Execution]
+   SELECT * FROM entity WHERE id IN (1, 4, 9, 10, 15) AND NOT isblacklisted ORDER BY frequency DESC; (117 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getByIds$1.apply(EntityService.scala:149)
+    models.services.DBEntityService$$anonfun$getByIds$1.apply(EntityService.scala:145)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getByIds(EntityService.scala:145)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:145)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:128)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:29:37,159 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-4 - SQL execution completed
+
+  [SQL Execution]
+   SELECT * FROM entity WHERE id IN (2, 5, 3, 13, 14) AND NOT isblacklisted ORDER BY frequency DESC; (115 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getByIds$1.apply(EntityService.scala:149)
+    models.services.DBEntityService$$anonfun$getByIds$1.apply(EntityService.scala:145)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getByIds(EntityService.scala:145)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:145)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:128)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:29:37,201 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-9 - SQL execution completed
+
+  [SQL Execution]
+   SELECT * FROM entity WHERE id IN (8) AND NOT isblacklisted ORDER BY frequency DESC; (157 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getByIds$1.apply(EntityService.scala:149)
+    models.services.DBEntityService$$anonfun$getByIds$1.apply(EntityService.scala:145)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getByIds(EntityService.scala:145)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:145)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:128)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:29:37,218 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-6 - SQL execution completed
+
+  [SQL Execution]
+   SELECT * FROM entity WHERE id IN (6, 7, 11, 12) AND NOT isblacklisted ORDER BY frequency DESC; (183 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getByIds$1.apply(EntityService.scala:149)
+    models.services.DBEntityService$$anonfun$getByIds$1.apply(EntityService.scala:145)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getByIds(EntityService.scala:145)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:145)
+    controllers.EntityController$$anonfun$getEntitiesByType$1.apply(EntityController.scala:128)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:29:37,745 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-8 - SQL execution completed
+
+  [SQL Execution]
+   SELECT m.docid id, m.value, m.key, m.type FROM metadata m WHERE m.key IN ('Timezone', 'sender.id', 'sender.email', 'sender.name', 'Recipients.order', 'Recipients.email', 'Recipients.id', 'Recipients.name', 'Recipients.type', 'Subject') AND m.docid IN (11, 12, 13, 14, 15); (755 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$getMetadata$1.apply(DocumentService.scala:256)
+    models.services.DBDocumentService$$anonfun$getMetadata$1.apply(DocumentService.scala:251)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBDocumentService$class.getMetadata(DocumentService.scala:251)
+    models.services.FinalDocumentService.getMetadata(DocumentService.scala:314)
+    controllers.DocumentController.controllers$DocumentController$$createJsonResponse(DocumentController.scala:173)
+    controllers.DocumentController$$anonfun$getDocs$1.apply(DocumentController.scala:156)
+    controllers.DocumentController$$anonfun$getDocs$1.apply(DocumentController.scala:126)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    ...
+
+2017-04-27 13:29:37,881 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-8 - SQL execution completed
+
+  [SQL Execution]
+   SELECT id, created FROM document WHERE id IN (11, 12, 13, 14, 15); (127 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$getMetadata$1.apply(DocumentService.scala:258)
+    models.services.DBDocumentService$$anonfun$getMetadata$1.apply(DocumentService.scala:251)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBDocumentService$class.getMetadata(DocumentService.scala:251)
+    models.services.FinalDocumentService.getMetadata(DocumentService.scala:314)
+    controllers.DocumentController.controllers$DocumentController$$createJsonResponse(DocumentController.scala:173)
+    controllers.DocumentController$$anonfun$getDocs$1.apply(DocumentController.scala:156)
+    controllers.DocumentController$$anonfun$getDocs$1.apply(DocumentController.scala:126)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    ...
+
+2017-04-27 13:30:22,342 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-9 - SQL execution completed
+
+  [SQL Execution]
+   SELECT DISTINCT type FROM entity WHERE NOT isblacklisted; (51 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:241)
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:240)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getTypes(EntityService.scala:240)
+    models.services.ESNetworkService.cardinalityAggregate(NetworkService.scala:190)
+    models.services.ESNetworkService.getNeighborCountsPerType(NetworkService.scala:182)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:69)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:63)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    ...
+
+2017-04-27 13:31:28,648 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-2 - SQL execution completed
+
+  [SQL Execution]
+   SELECT DISTINCT type FROM entity WHERE NOT isblacklisted; (21 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:241)
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:240)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getTypes(EntityService.scala:240)
+    models.services.ESNetworkService.cardinalityAggregate(NetworkService.scala:190)
+    models.services.ESNetworkService.getNeighborCountsPerType(NetworkService.scala:182)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:69)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:63)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    ...
+
+2017-04-27 13:37:18,569 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-11 - SQL execution completed
+
+  [SQL Execution]
+   SELECT DISTINCT type FROM entity WHERE NOT isblacklisted; (16 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:241)
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:240)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getTypes(EntityService.scala:240)
+    models.services.ESNetworkService.cardinalityAggregate(NetworkService.scala:190)
+    models.services.ESNetworkService.getNeighborCountsPerType(NetworkService.scala:182)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:69)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:63)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    ...
+
+2017-04-27 13:37:49,399 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-15 - SQL execution completed
+
+  [SQL Execution]
+   SELECT DISTINCT type FROM entity WHERE NOT isblacklisted; (41 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:241)
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:240)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getTypes(EntityService.scala:240)
+    models.services.ESNetworkService.cardinalityAggregate(NetworkService.scala:190)
+    models.services.ESNetworkService.getNeighborCountsPerType(NetworkService.scala:182)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:69)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:63)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    ...
+
+2017-04-27 13:38:09,579 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-16 - SQL execution completed
+
+  [SQL Execution]
+   SELECT entid AS id, e.name, e.type, e.frequency, entitystart, entityend FROM entityoffset INNER JOIN entity AS e ON e.id = entid WHERE docid = 11 AND NOT e.isblacklisted; (156 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$12.apply(EntityService.scala:234)
+    models.services.DBEntityService$$anonfun$12.apply(EntityService.scala:229)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getEntityFragments(EntityService.scala:229)
+    controllers.EntityController$$anonfun$getEntitiesByDoc$1.apply(EntityController.scala:74)
+    controllers.EntityController$$anonfun$getEntitiesByDoc$1.apply(EntityController.scala:72)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:38:10,254 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-17 - SQL execution completed
+
+  [SQL Execution]
+   SELECT t.id, t.documentid, l.label FROM tags t INNER JOIN labels AS l ON l.id = t.labelid WHERE t.documentid = 11; (63 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$getTags$1.apply(DocumentService.scala:230)
+    models.services.DBDocumentService$$anonfun$getTags$1.apply(DocumentService.scala:226)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBDocumentService$class.getTags(DocumentService.scala:226)
+    models.services.FinalDocumentService.getTags(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$getTagsByDocId$1.apply(DocumentController.scala:106)
+    controllers.DocumentController$$anonfun$getTagsByDocId$1.apply(DocumentController.scala:105)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    ...
+
+2017-04-27 13:38:10,394 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-14 - SQL execution completed
+
+  [SQL Execution]
+   SELECT term, frequency FROM terms WHERE docid = 11 LIMIT 15; (41 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$getKeywords$1.apply(DocumentService.scala:244)
+    models.services.DBDocumentService$$anonfun$getKeywords$1.apply(DocumentService.scala:239)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBDocumentService$class.getKeywords(DocumentService.scala:239)
+    models.services.FinalDocumentService.getKeywords(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$getKeywordsById$1.apply(DocumentController.scala:69)
+    controllers.DocumentController$$anonfun$getKeywordsById$1.apply(DocumentController.scala:68)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    ...
+
+2017-04-27 13:38:20,556 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-17 - SQL execution completed
+
+  [SQL Execution]
+   SELECT id FROM labels WHERE label = 'tag1'; (9 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$class.models$services$DBDocumentService$$getOrCreateLabel(DocumentService.scala:198)
+    models.services.DBDocumentService$$anonfun$6.apply(DocumentService.scala:172)
+    models.services.DBDocumentService$$anonfun$6.apply(DocumentService.scala:171)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:326)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:290)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:319)
+    scalikejdbc.NamedDB.localTx(NamedDB.scala:17)
+    models.services.DBDocumentService$class.addTag(DocumentService.scala:171)
+    models.services.FinalDocumentService.addTag(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$addTag$1.apply(DocumentController.scala:86)
+    controllers.DocumentController$$anonfun$addTag$1.apply(DocumentController.scala:85)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:38:20,614 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-17 - SQL execution completed
+
+  [SQL Execution]
+   INSERT INTO labels (label) VALUES ('tag1'); (45 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$models$services$DBDocumentService$$getOrCreateLabel$1.apply$mcJ$sp(DocumentService.scala:200)
+    models.services.DBDocumentService$$anonfun$models$services$DBDocumentService$$getOrCreateLabel$1.apply(DocumentService.scala:200)
+    models.services.DBDocumentService$$anonfun$models$services$DBDocumentService$$getOrCreateLabel$1.apply(DocumentService.scala:200)
+    scala.Option.getOrElse(Option.scala:121)
+    models.services.DBDocumentService$class.models$services$DBDocumentService$$getOrCreateLabel(DocumentService.scala:199)
+    models.services.DBDocumentService$$anonfun$6.apply(DocumentService.scala:172)
+    models.services.DBDocumentService$$anonfun$6.apply(DocumentService.scala:171)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:326)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:290)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:319)
+    scalikejdbc.NamedDB.localTx(NamedDB.scala:17)
+    models.services.DBDocumentService$class.addTag(DocumentService.scala:171)
+    models.services.FinalDocumentService.addTag(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$addTag$1.apply(DocumentController.scala:86)
+    controllers.DocumentController$$anonfun$addTag$1.apply(DocumentController.scala:85)
+    ...
+
+2017-04-27 13:38:20,625 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-17 - SQL execution completed
+
+  [SQL Execution]
+   SELECT t.id, t.documentid, l.label FROM tags t INNER JOIN labels AS l ON l.id = t.labelid WHERE t.documentid = 11 AND t.labelid = 1; (8 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$class.models$services$DBDocumentService$$getByValues(DocumentService.scala:208)
+    models.services.DBDocumentService$$anonfun$6.apply(DocumentService.scala:173)
+    models.services.DBDocumentService$$anonfun$6.apply(DocumentService.scala:171)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:326)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:290)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:319)
+    scalikejdbc.NamedDB.localTx(NamedDB.scala:17)
+    models.services.DBDocumentService$class.addTag(DocumentService.scala:171)
+    models.services.FinalDocumentService.addTag(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$addTag$1.apply(DocumentController.scala:86)
+    controllers.DocumentController$$anonfun$addTag$1.apply(DocumentController.scala:85)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:38:20,634 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-17 - SQL execution completed
+
+  [SQL Execution]
+   INSERT INTO tags (documentid, labelid) VALUES (11, 1); (6 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$6$$anonfun$apply$1.apply(DocumentService.scala:175)
+    models.services.DBDocumentService$$anonfun$6$$anonfun$apply$1.apply(DocumentService.scala:174)
+    scala.Option.getOrElse(Option.scala:121)
+    models.services.DBDocumentService$$anonfun$6.apply(DocumentService.scala:174)
+    models.services.DBDocumentService$$anonfun$6.apply(DocumentService.scala:171)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:326)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:290)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:319)
+    scalikejdbc.NamedDB.localTx(NamedDB.scala:17)
+    models.services.DBDocumentService$class.addTag(DocumentService.scala:171)
+    models.services.FinalDocumentService.addTag(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$addTag$1.apply(DocumentController.scala:86)
+    controllers.DocumentController$$anonfun$addTag$1.apply(DocumentController.scala:85)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    ...
+
+2017-04-27 13:38:22,729 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-14 - SQL execution completed
+
+  [SQL Execution]
+   SELECT entid AS id, e.name, e.type, e.frequency, entitystart, entityend FROM entityoffset INNER JOIN entity AS e ON e.id = entid WHERE docid = 12 AND NOT e.isblacklisted; (5 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$12.apply(EntityService.scala:234)
+    models.services.DBEntityService$$anonfun$12.apply(EntityService.scala:229)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getEntityFragments(EntityService.scala:229)
+    controllers.EntityController$$anonfun$getEntitiesByDoc$1.apply(EntityController.scala:74)
+    controllers.EntityController$$anonfun$getEntitiesByDoc$1.apply(EntityController.scala:72)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    play.api.mvc.Action$.invokeBlock(Action.scala:495)
+    ...
+
+2017-04-27 13:38:22,861 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-14 - SQL execution completed
+
+  [SQL Execution]
+   SELECT term, frequency FROM terms WHERE docid = 12 LIMIT 15; (12 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$getKeywords$1.apply(DocumentService.scala:244)
+    models.services.DBDocumentService$$anonfun$getKeywords$1.apply(DocumentService.scala:239)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBDocumentService$class.getKeywords(DocumentService.scala:239)
+    models.services.FinalDocumentService.getKeywords(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$getKeywordsById$1.apply(DocumentController.scala:69)
+    controllers.DocumentController$$anonfun$getKeywordsById$1.apply(DocumentController.scala:68)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    ...
+
+2017-04-27 13:38:22,869 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-17 - SQL execution completed
+
+  [SQL Execution]
+   SELECT t.id, t.documentid, l.label FROM tags t INNER JOIN labels AS l ON l.id = t.labelid WHERE t.documentid = 12; (16 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBDocumentService$$anonfun$getTags$1.apply(DocumentService.scala:230)
+    models.services.DBDocumentService$$anonfun$getTags$1.apply(DocumentService.scala:226)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBDocumentService$class.getTags(DocumentService.scala:226)
+    models.services.FinalDocumentService.getTags(DocumentService.scala:314)
+    controllers.DocumentController$$anonfun$getTagsByDocId$1.apply(DocumentController.scala:106)
+    controllers.DocumentController$$anonfun$getTagsByDocId$1.apply(DocumentController.scala:105)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    play.api.mvc.Action$.invokeBlock(Action.scala:498)
+    ...
+
+2017-04-27 13:51:35,759 [WARN] from scalikejdbc.StatementExecutor$$anon$1 in application-akka.actor.default-dispatcher-16 - SQL execution completed
+
+  [SQL Execution]
+   SELECT DISTINCT type FROM entity WHERE NOT isblacklisted; (161 ms)
+
+  [Stack Trace]
+    ...
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:241)
+    models.services.DBEntityService$$anonfun$getTypes$1.apply(EntityService.scala:240)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.DBConnection$$anonfun$readOnly$1.apply(DBConnection.scala:201)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.NamedDB.using(NamedDB.scala:17)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:201)
+    scalikejdbc.NamedDB.readOnly(NamedDB.scala:17)
+    models.services.DBEntityService.getTypes(EntityService.scala:240)
+    models.services.ESNetworkService.cardinalityAggregate(NetworkService.scala:190)
+    models.services.ESNetworkService.getNeighborCountsPerType(NetworkService.scala:182)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:69)
+    controllers.NetworkController$$anonfun$getNeighborCounts$1.apply(NetworkController.scala:63)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)
+    play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)
+    ...
+
