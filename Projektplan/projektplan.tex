@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Project Plan\\[0.5cm]
+Master Project:\\Web Interfaces for Language Processing Systems
+}
+\author{Alvin Fazrie and Thorben Wiese}
+
+\begin{document}
+\maketitle
+
+\section{TODO-List}
+\subsection{Entity recognition}
+
+\begin{itemize}
+\item Install New/s/leak on local machine (also in Docker)
+\item Implement right click behavior on words
+\item Create black- and white-list in backend (DocumentService.scala)
+\begin{itemize}
+	\item Logic for right click behaviour is in NetworkController.js
+	\item This logic needs to be implemented in DocumentController.js to create a div when rightclicking and to create a add/remove to/from Blacklist option with an own function behind it
+	\item the function should be called in DocumentService.scala
+\end{itemize}
+\item Update elasticsearch indexes
+\item Present list with found entities before adding to black-list
+\item Log user decision of entity list
+\end{itemize}
+
+\subsection{Keyword recognition}
+
+\begin{itemize}
+\item Insert better algorithm for keyword finding?
+\item Create another graph for keywords next to the entity graph? Maybe choose another display option.
+\item Display the found keywords within a mail and next to entities of the entity graph nicely, e.g. sizing words based on frequency/importance/...
+\end{itemize}
+
+\clearpage
+
+\section{Mile Stones}
+\begin{enumerate}
+	\item Setup project
+	\begin{itemize}
+		\item Getting familiar with technologies/programming languages etc.
+		\item Implementing a functionality to right click on the frontend and call a function in the backend
+	\end{itemize}
+	\item Improving Entity recognition
+	\begin{itemize}
+		\item Inserting/deleting words to/from blacklist
+		\item Creating option list of found entities that can be deleted $\Rightarrow$ Log the decision
+		\item Updating the elasticsearch indexes appropiately
+	\end{itemize}
+	\item Improving keyword recognition
+	\begin{itemize}
+		\item Replace or improve the keyword recognition algorithm
+		\item Choose a method to display found keywords niceley within an email
+		\item Choose a method to display found keywords nicely within the Entity Graph and in an overall view of keywords
+		\item First idea: sizing words based on frequency/importance etc.
+	\end{itemize}
+\end{enumerate}
+
+\end{document}
