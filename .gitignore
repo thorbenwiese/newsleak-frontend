@@ -14,6 +14,9 @@
 *~
 !public/manual.pdf
 
+_site
+.sass-cache
+
 lib/
 *.class
 
