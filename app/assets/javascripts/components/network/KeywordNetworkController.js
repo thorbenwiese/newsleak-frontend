@@ -102,25 +102,14 @@ define([
 
             function esSearchKeywords(res, tag) {
 
-                $scope.client.search({
-                    index: $scope.indexName,
-                    type: 'document',
-                    id: res,
-                    body: {
-                        query: {
-                            match: {
-                                _id: res
-                            }
-                        }
-                    }
+                playRoutes.controllers.KeywordNetworkController.searchKeywordsByDocIdES(res).get().then(function (resp) {
 
-                }).then(function (resp) {
-
-                    if(resp.hits.hits[0]._source.Keywords){
+                    console.log(resp);
+                    if(resp.data.Keywords){
                         let keywords = [];
                         let frequencies = [];
 
-                        for(let item of resp.hits.hits[0]._source.Keywords){
+                        for(let item of resp.data.keywords){
                             if(item.Keyword){
                                 keywords.push(item.Keyword);
                             }
@@ -141,9 +130,9 @@ define([
                         });
                     }
                     else {
-                        console.log($scope.currentTags);
+                        // console.log($scope.currentTags);
                         $scope.currentTags.slice($scope.currentTags.indexOf(tag), 1);
-                        console.log($scope.currentTags);
+                        // console.log($scope.currentTags);
                         // $scope.tagCount++;
                     }
 
@@ -417,6 +406,8 @@ define([
                     }
                 });
             }
+
+            $scope.allDocIds = [];
 
             function init() {
                 initES();

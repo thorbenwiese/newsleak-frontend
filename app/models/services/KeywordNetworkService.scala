@@ -19,6 +19,7 @@ package models.services
 
 import com.google.inject.{ ImplementedBy, Inject }
 import models.{ KeywordAggregation, KeywordNetwork, Tag }
+import org.elasticsearch.action.search.{ SearchRequestBuilder, SearchResponse }
 import org.elasticsearch.search.aggregations.AggregationBuilders
 import org.elasticsearch.search.aggregations.metrics.cardinality.Cardinality
 
@@ -131,6 +132,8 @@ trait KeywordNetworkService {
    * @return the address as string
    */
   def getHostAddress(): String
+
+  def executeQuery(query: String, fields: List[String])(index: String): SearchResponse
 }
 
 /**
@@ -348,5 +351,10 @@ class ESKeywordNetworkService @Inject() (
   /** @inheritdoc */
   override def getHostAddress(): String = {
     NewsleakConfigReader.esSettings.address + ":" + NewsleakConfigReader.config.getInt("es.httpPort")
+  }
+
+  def executeQuery(query: String, fields: List[String])(index: String): SearchResponse = {
+    val builder = utils.initSearchRequestBuilder(query, index, clientService, fields)
+    utils.executeRequest(builder)
   }
 }

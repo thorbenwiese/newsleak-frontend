@@ -16,6 +16,7 @@ GET        /removeTag                             controllers.DocumentController
 GET        /getTagsByDocId                        controllers.DocumentController.getTagsByDocId(id: Int)
 GET        /getKeywordsById                       controllers.DocumentController.getKeywordsById(id: Int, size: Int)
 GET        /getDocs                               controllers.DocumentController.getDocs(fullText: List[String], generic: Map[String, List[String]], entities: List[Long], keywords: List[String], timeRange: String, timeExprRange: String)
+GET        /getAllDocIds                          controllers.DocumentController.getAllDocIds(fullText: List[String], generic: Map[String, List[String]], entities: List[Long], keywords: List[String], timeRange: String, timeExprRange: String)
 GET        /getDocsByIds                          controllers.DocumentController.getDocsByIds(ids: List[Long])
 GET        /induceSubgraph                        controllers.NetworkController.induceSubgraph(fullText: List[String], generic: Map[String, List[String]], entities: List[Long], keywords: List[String], timeRange: String, timeExprRange: String, nodeFraction: Map[String, String])
 GET        /addNode                               controllers.NetworkController.addNodes(fullText: List[String], generic: Map[String, List[String]], entities: List[Long], timeRange: String, timeExprRange: String, currentNetwork: List[Long], nodes: List[Long])
@@ -40,6 +41,7 @@ GET        /getTags                               controllers.KeywordNetworkCont
 GET        /setTagKeywordRelation                 controllers.KeywordNetworkController.setTagKeywordRelation(tag: String, keywords: List[String], frequencies: List[Long])
 GET        /clearTagKeywordRelation               controllers.KeywordNetworkController.resetTagKeywordRelation
 GET        /getHostAddress                        controllers.KeywordNetworkController.getHostAddress
+GET        /searchKeywordsByDocIdES               controllers.KeywordNetworkController.searchKeywordsByDocIdES(id: Long)
 GET        /getEntities                           controllers.EntityController.getEntitiesByType(fullText: List[String], generic: Map[String, List[String]], entities: List[Long], timeRange: String, timeExprRange: String, size: Int, entityType: String, filter: List[Long])
 GET        /getRecordedEntity                     controllers.EntityController.getRecordedEntity(text: String, enType: String)
 GET        /getEntityTypes                        controllers.EntityController.getEntityTypes
@@ -65,3 +67,4 @@ GET        /getTimelineLOD                        controllers.HistogramControlle
 GET        /assets/javascripts/jsroutes.js        controllers.Application.jsRoutes()
 GET        /vassets/*file                         controllers.Assets.versioned(path="/public", file: Asset)
 GET        /assets/*file                          controllers.Assets.at(path="/public", file)
+GET        /index.scala.html                      controllers.Assets.at(path="/public", file="views/index.scala.html")
