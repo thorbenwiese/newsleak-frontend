@@ -101,8 +101,9 @@ define([
                         $scope.sourceShared.documentsInDB = -1;
                     });
 
+                    $scope.allDocIds = [];
 
-                    /**
+                        /**
                      * load document list for current filtering
                      */
                     $scope.updateDocumentList = function () {
@@ -140,6 +141,10 @@ define([
                             $scope.iteratorEmpty = x.data.hits <= 50;
                             $("#vertical-container").css("height", $("#documents-view").height() - 110);
 
+                            // playRoutes.controllers.DocumentController.getAllDocIds(fulltext, facets, entities, keywords, ObserverService.getTimeRange(),ObserverService.getXTimeRange()).get().then(function (response) {
+                            //    console.log(response);
+                            //    $scope.allDocIds = response.data.ids;
+                            // });
                         });
                         return $scope.defered.promise;
                     };

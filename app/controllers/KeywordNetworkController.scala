@@ -21,10 +21,13 @@ import javax.inject.Inject
 
 import models.services.{ EntityService, KeywordNetworkService }
 import models.{ Facets, KeyTerm, KeywordNetwork, KeywordRelationship }
+import org.elasticsearch.search.SearchHitField
+import org.elasticsearch.search.internal.InternalSearchHitField
+import play.api.libs.json.Json.toJson
 import play.api.libs.json.{ JsObject, Json }
-import play.api.mvc.{ Action, AnyContent, Controller, Request }
+import play.api.mvc._
 import scalikejdbc._
-import util.{ DateUtils }
+import util.DateUtils
 import util.SessionUtils.currentDataset
 
 import scala.collection.mutable.ListBuffer
@@ -225,5 +228,49 @@ class KeywordNetworkController @Inject() (
 
   def getHostAddress() = Action { implicit request =>
     Ok(keywordNetworkService.getHostAddress()).as("Text")
+  }
+
+  def searchKeywordsByDocIdES(id: Long) = Action { implicit request =>
+    val query =
+      s"""
+        {
+          "query" : {
+            "match" : {
+              "_id": $id
+            }
+          }
+        }
+      """
+
+    val list: ListBuffer[String] = ListBuffer()
+    list.append("Keywords.Keyword.raw")
+    list.append("Keywords.TermFrequency")
+
+    val fields = list.toList
+    val response = keywordNetworkService.executeQuery(query, fields)(currentDataset)
+    val test = response.getHits.getAt(0)
+    val result: ListBuffer[KeyTerm] = ListBuffer()
+    val it = response.getHits.hits()(0).fields().values().iterator()
+    val it2 = response.getHits.hits()(0).fields().values().toArray.toList
+    val i1 = it2(0)
+    val i2 = it2(1)
+
+    if (it.hasNext) {
+      val item = it.next()
+      val vals = item.values().iterator()
+      while (vals.hasNext) {
+        val v = vals.next()
+        v
+        // result += KeyTerm(vals.next().toString
+      }
+    }
+
+    // val res = Json.obj("keywords" -> i1, "frequencies" -> i2)
+    // Ok(Json.obj("keywords" -> i1.toString, "freqs" -> i2.toString)).as("application/json")
+    // Ok(Json.toJson("keywords" -> it2)).as("application/json")
+    // Ok(Json.toJson("keywords" -> Json.toJson(it2))).as("application/json")
+    // Results.Ok(Json.toJson(Json.obj("keywords" -> Json.toJson(it2)))).as("application/json")
+    // Ok(Json.toJson(res))
+    Ok(Json.toJson(test))
   }
 }

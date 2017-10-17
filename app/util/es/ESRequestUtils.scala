@@ -69,6 +69,17 @@ class ESRequestUtils @Inject() (dateUtils: DateUtils) {
     requestBuilder
   }
 
+  def initSearchRequestBuilder(query: String, index: String, client: SearchClientService, fields: List[String]): SearchRequestBuilder = {
+    val requestBuilder = client.client.prepareSearch(index)
+      .setQuery(query)
+
+    for (field <- fields) {
+      requestBuilder.addField(field)
+    }
+
+    requestBuilder
+  }
+
   private def createQuery(facets: Facets): QueryBuilder = {
     if (facets.isEmpty) {
       QueryBuilders.matchAllQuery()
