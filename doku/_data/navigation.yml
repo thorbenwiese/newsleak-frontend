@@ -1,0 +1,27 @@
+- title: NEW/S/LEAK
+  url: "/"
+  side: left
+
+- title: Blog
+  url: "http://newsleak.io"
+  side: left
+
+- title: Documentation
+  url: "/install"
+  side: left
+  dropdown:
+  - title: Installation
+    url: /install
+  - title: User Manual
+    url: /documentation
+  - title: Java Doc.
+    url: https://tudarmstadt-lt.github.io/newsleak-frontend/scaladoc/index.html
+
+
+- title: Source
+  url: "http://github.com/tudarmstadt-lt/newsleak-frontend"
+  side: left
+
+- title: Project Description
+  url: https://www.inf.uni-hamburg.de/en/inst/ab/lt/research/past-projects/divid-dj.html
+  side: left
