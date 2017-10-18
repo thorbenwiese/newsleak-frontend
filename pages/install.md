@@ -114,13 +114,13 @@ The only configuration you have to change in this section is the `treeTaggerHome
   ```
   Also, change to the elastic search related configurations. The appropriate elasticsearch version supported is available under `NEWSLEAKHOME`. If you plan your existing elasticsearch installation, make sure they have the same versions (`2.2.0`)
 Make sure also you have the same `clustername` in the `elasticsearch.yml` file as shown below.
-````
-es.clustername = "NewsLeaksCluster"
-es.address = "localhost"
-es.port = 9501
-es.indices =  [newsleak]
-es.index.default = "newsleak"
 
+  ````
+  es.clustername = "NewsLeaksCluster"
+  es.address = "localhost"
+  es.port = 9501
+  es.indices =  [newsleak]
+  es.index.default = "newsleak"
 ````
 
 * Edit the `elasticsearch.yml` so that the name of the cluster matches the name given in the `application.conf` file.
@@ -133,6 +133,21 @@ network.host: 0.0.0.0
 transport.tcp.port: 9501
 http.port: 9500
 ```
+
+* To enable UPDATE API and AGGS API in elasticsearch and also allow HTTP cors methods, add these configurations in the `elasticsearch.yml`:
+
+ ```
+ cluster.routing.allocation.disk.threshold_enabled: false
+ http.cors.enabled : true
+ http.cors.allow-origin : "*"
+ http.cors.allow-methods : OPTIONS, HEAD, GET, POST, PUT, DELETE
+ http.cors.allow-headers : X-Requested-With,X-Auth-Token,Content-Type, Content-Length
+ script.engine.groovy.inline.update: on
+ script.enginge.groovy.inline.aggs: on
+ index.number_of_shards: 1
+ index.number_of_replicas: 1
+ ```
+
 Finally, provide the absolute path of Elasticsearch for `path.data` and `path.home`
 ```
  path.data: /ABSOLUTE/PATH/TO/elasticsearch-2.2.0
