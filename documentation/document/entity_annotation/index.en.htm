@@ -68,26 +68,30 @@
       <div id="zentrale_spalte">
         <div class="eine_spalte"> <!-- InstanceBeginEditable name="Content2" --> <a name="inhalt" id="inhalt"></a> <a id="berschrift" name="berschrift"></a>
           <h1 class="erste_ueberschrift">Entity Annotation</h1>
-          <!-- <p>The document reading view shows the full text of the user-selected document. The user selects the document in the list by clicking on the document name. This close reading mode enables users to verify hypotheses they perceive in the distant reading visualizations. </p>
+          <p>In the document reading view, a new entity can be added by selecting one text from the document. Once it is selected, a whitelisting modal popup will appear.</p>
 
-<p>Each document is shown in a separate tab with DocumentID as tab name. The user can close the document by clicking on the X of the tab name on the top of the view.</p>
+          <p>The modal popup has a title text "Add entity:" and the selected text is shown beside the title text.</p>
 
-<p>The document starts with the document name. Then document keywords are listed. And then the document content is presented, where the found entities are highlighted in blue color and are underlined. The underline color corresponds to the type of entity. Longer documents can be read by scrolling down.
-</p> -->
+          <p>In order to annotate the text to be a new entity, the user needs to select one type from the "Select type" dropdown.
+          </p>
 
  <p><a href="../../images/whitelist_doc1.png"><img src="../../images/whitelist_doc1.png" width="660" height="460" alt="Entity whitelisting" /></a></p>
 
  <h3 class="dritte_ueberschrift">Select Type</h3>
-          <!-- <p>The user can tag each document by one or more tags. The user can select from the available tags or enter a free text of the new tag. The tags can be removed by clicking on the x button next to the tag.</p> -->
+          <p>The user can only select one type in the dropdown. After selecting the entity type the OK button will turn into blue showing that submission has been enabled.</p>
 <p><a href="../../images/whitelist_modal1.png"><img src="../../images/whitelist_modal1.png" width="180" height="180" alt="Entity whitelisting modal" /></a></p>
 
 <h3 class="dritte_ueberschrift">New type of Entity</h3>
-         <!-- <p>The user can tag each document by one or more tags. The user can select from the available tags or enter a free text of the new tag. The tags can be removed by clicking on the x button next to the tag.</p> -->
+         <p>The user can also create new entity type by clicking new type checkbox. If the new type checkbox is selected, the "select type" dropdown will dissapear and the "new type" text input will appear.</p>
 <p><a href="../../images/whitelist_modal2.png"><img src="../../images/whitelist_modal2.png" width="180" height="180" alt="Entity whitelisting modal" /></a></p>
 
 <h3 class="dritte_ueberschrift">New Entity annotated</h3>
-         <!-- <p>The user can tag each document by one or more tags. The user can select from the available tags or enter a free text of the new tag. The tags can be removed by clicking on the x button next to the tag.</p> -->
+         <p>After selecting or creating new type, the user is able to click ok button and it will start to annotate a new entity. The document will reload and there is new entity inside the document reading view.</p>
 <p><a href="../../images/whitelist_doc2.png"><img src="../../images/whitelist_doc2.png" width="420" height="400" alt="Entity whitelisting modal" /></a></p>
+
+<h3 class="dritte_ueberschrift">Restriction</h3>
+         <p>The user is not allowed to annotate entity from the text which has already been an entity. Once the user select a text that has already been annotated, the warning popup will appear, informing that the selection cannot contain existing entity.</p>
+<p><a href="../../images/whitelist_alert1.png"><img src="../../images/whitelist_alert1.png" width="720" height="380" alt="Entity whitelisting modal" /></a></p>
         <!-- InstanceEndEditable --> </div>
       </div>
       <div id="rechte_marginalienspalte">
