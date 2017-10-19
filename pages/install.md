@@ -68,6 +68,9 @@ We have compiled everything required to start the new/s/leak application. You ca
 ```
 CREATE ROLE newsreader LOGIN ENCRYPTED PASSWORD 'md520828c83196619e0230b4f434489680b' SUPERUSER INHERIT CREATEDB CREATEROLE ;
 CREATE DATABASE newsreader WITH OWNER = postgres ENCODING = 'UTF8' TABLESPACE = pg_default LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8' CONNECTION LIMIT = -1;
+
+CREATE TABLE blacklistedkeywords(docid bigint, term varchar(50), frequency integer, type varchar(50));
+CREATE TABLE duplicatekeywords(duplicate varchar(50), focal varchar(50));
 ```
 
 Before starting the application complete the followings:
